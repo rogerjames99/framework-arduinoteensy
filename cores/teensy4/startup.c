@@ -89,7 +89,7 @@ void ResetHandler(void)
 	for (i=0; i < NVIC_NUM_INTERRUPTS; i++) NVIC_SET_PRIORITY(i, 128);
 	SCB_VTOR = (uint32_t)_VectorsRam;
 
-	reset_PFD();
+	//reset_PFD(); Removed to allow GDB debugging
 
 	// enable exception handling
 	SCB_SHCSR |= SCB_SHCSR_MEMFAULTENA | SCB_SHCSR_BUSFAULTENA | SCB_SHCSR_USGFAULTENA;
